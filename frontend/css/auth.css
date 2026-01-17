@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+}
+
+.auth-box {
+  width: 320px;
+  margin: 120px auto;
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
