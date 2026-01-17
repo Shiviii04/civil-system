@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Complaint Reporting System</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            font-size: 22px;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc2626;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .stat-card h2 {
+            font-size: 34px;
+            color: #2563eb;
+        }
+
+        .stat-card p {
+            margin-top: 5px;
+            color: #555;
+        }
+
+        /* Complaints Section (Horizontal) */
+        .complaints {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .complaint-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-top: 6px solid #999;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .complaint-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .complaint-card p {
+            margin-bottom: 12px;
+            color: #444;
+        }
+
+        /* Status colors */
+        .pending {
+            border-top-color: #f59e0b;
+        }
+
+        .in-progress {
+            border-top-color: #3b82f6;
+        }
+
+        .resolved {
+            border-top-color: #22c55e;
+        }
+
+        .status {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        /* Buttons */
+        .actions {
+            margin-top: auto;
+        }
+
+        .actions button {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #2563eb;
+            color: white;
+            margin-right: 6px;
+            transition: 0.2s ease;
+        }
+
+        .actions button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header with Logout -->
+    <div class="header">
+        <h1>Civic Complaint Reporting System</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-card">
+            <h2>23</h2>
+            <p>Total Complaints</p>
+        </div>
+        <div class="stat-card">
+            <h2>7</h2>
+            <p>Open Complaints</p>
+        </div>
+        <div class="stat-card">
+            <h2>5</h2>
+            <p>In Progress</p>
+        </div>
+        <div class="stat-card">
+            <h2>11</h2>
+            <p>Resolved</p>
+        </div>
+    </div>
+
+    <!-- Complaints -->
+    <div class="complaints">
+
+        <div class="complaint-card pending">
+            <h3>#1023 Potholes</h3>
+            <p>Large pothole on Main St.</p>
+            <span class="status">Pending</span>
+            <div class="actions">
+                <button>View</button>
+                <button>Edit</button>
+                <button>Assign</button>
+            </div>
+        </div>
+
+        <div class="complaint-card in-progress">
+            <h3>#1009 Water Leak</h3>
+            <p>Water leak near 5th Street</p>
+            <span class="status">In Progress</span>
+            <div class="actions">
+                <button>View</button>
+                <button>Edit</button>
+                <button>Assign</button>
+            </div>
+        </div>
+
+        <div class="complaint-card resolved">
+            <h3>#1015 Streetlight Issue</h3>
+            <p>Streetlight not working on 3rd Ave</p>
+            <span class="status">Resolved</span>
+            <div class="actions">
+                <button>View</button>
+                <button>Edit</button>
+                <button>Assign</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Simple Logout Script -->
+    <script>
+        function logout() {
+            // For now just redirect (connect to backend later)
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>

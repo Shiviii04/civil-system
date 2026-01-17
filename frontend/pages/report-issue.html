@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report an Issue</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <link rel="stylesheet" href="../css/report.css">
+</head>
+
+<body>
+
+<div class="report-container">
+
+  <h2 class="title">Report an Issue</h2>
+
+  <!-- Category -->
+  <label>Issue Category <span>*</span></label>
+  <select id="category">
+    <option value="">Select Category</option>
+    <option>Road</option>
+    <option>Garbage</option>
+    <option>Street Light</option>
+    <option>Water</option>
+  </select>
+
+  <!-- Description -->
+  <label>Description <span>*</span></label>
+  <textarea id="description" placeholder="Describe the issue..."></textarea>
+
+  <!-- Upload -->
+  <label>Upload Photo</label>
+  <div class="upload-box">
+    <input type="file" id="photo" hidden>
+    <button onclick="document.getElementById('photo').click()">📷 Add Photo</button>
+    <p>Upload an image</p>
+  </div>
+
+  <!-- Location -->
+  <label>Location <span>*</span></label>
+  <div class="location-row">
+    <input type="text" id="address" placeholder="Enter address or landmark">
+    <button onclick="useCurrentLocation()">Use Current Location</button>
+  </div>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Submit -->
+  <button class="submit-btn" onclick="submitReport()">Submit Report</button>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="../js/report.js"></script>
+
+</body>
+</html>

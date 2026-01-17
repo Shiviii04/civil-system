@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Civic Complaint Map</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+  <h2>Civic Complaint Reporting System</h2>
+
+  <div class="filters">
+    <!-- STATUS FILTER -->
+    <select id="statusFilter">
+      <option value="all">All Status</option>
+      <option value="Open">Open</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Resolved">Resolved</option>
+      <option value="Viewed">Viewed</option>
+    </select>
+
+    <!-- CATEGORY FILTER -->
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="Road">Road</option>
+      <option value="Garbage">Garbage</option>
+      <option value="Street Light">Street Light</option>
+    </select>
+
+    <button id="applyFilter">Apply</button>
+  </div>
+</header>
+
+<div class="map-container">
+  <div id="map"></div>
+
+  <!-- ✅ REPORT SUMMARY (FIXED) -->
+  <div class="summary-box">
+    <h3>Report Summary</h3>
+    <p>Total Reports: <b id="total">0</b></p>
+    <p>🔴 Open Issue: <b id="open">0</b></p>
+    <p>🟡 In Progress: <b id="progress">0</b></p>
+    <p>🟢 Resolved: <b id="resolved">0</b></p>
+    <p>🔵 Viewed: <b id="viewed">0</b></p>
+  </div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="../js/map.js"></script>
+
+</body>
+</html>
